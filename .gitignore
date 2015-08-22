@@ -124,6 +124,7 @@ sympy-plots-for-*.tex/
 # WinEdt
 *.bak
 *.sav
+
+#Other Excluded files
 GitaPress-AdhyatmaRamayan-Unabridged-Munilalsanskrit-hindi.pdf
-*.itx
-chapITX2tex.pyc
+itx/chapITX2tex.pyc
