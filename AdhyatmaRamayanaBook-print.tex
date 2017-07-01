@@ -1,11 +1,11 @@
 % !TeX program = XeLaTeX
-% !TeX root = AdhyatmaRamayanaBook-kindle.tex
+% !TeX root = AdhyatmaRamayanaBook-print.tex
 \documentclass[twoside,12pt]{book}
 \usepackage{etoolbox}
 \newbool{kindle}
 \newbool{print}
-\setbool{kindle}{true}
-\setbool{print}{false}
+\setbool{kindle}{false}
+\setbool{print}{true}
 \ifbool{kindle}{\usepackage[paperwidth=126mm,paperheight=168mm,left=5mm,right=5mm,top=15mm,bottom=20mm]{geometry}}{\usepackage[top=1.5cm, bottom=1.8cm, left=1.5cm, right=1.5cm,paperwidth=148mm,paperheight=210mm]{geometry}}
 
 \input{preamble}
@@ -24,14 +24,14 @@
 \sectionmark{\mbox{}}
 \clearpage
  \begin{center}
-\input{Mahatmyam}
-\input{BalaKanda}
-\input{AyodhyaKanda}
-\input{AranyaKanda}
-\input{KishkindhaKanda}
-\input{SundaraKanda}
-\input{YuddhaKanda}
-\input{UttaraKanda}
+\input{TeX/Mahatmyam}
+\input{TeX/BalaKanda}
+\input{TeX/AyodhyaKanda}
+\input{TeX/AranyaKanda}
+\input{TeX/KishkindhaKanda}
+\input{TeX/SundaraKanda}
+\input{TeX/YuddhaKanda}
+\input{TeX/UttaraKanda}
  \end{center}
 \closesection
 

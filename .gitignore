@@ -128,3 +128,4 @@ sympy-plots-for-*.tex/
 #Other Excluded files
 GitaPress-AdhyatmaRamayan-Unabridged-Munilalsanskrit-hindi.pdf
 itx/chapITX2tex.pyc
+*.tps
