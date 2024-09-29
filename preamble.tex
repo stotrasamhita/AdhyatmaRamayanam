@@ -2,7 +2,9 @@
 % !TeX root = gitabook.tex
 \usepackage{shloka}
 \usepackage{wallpaper}
-
+\newcounter{totalshlokas}
+\newcounter{kandashlokas}
+\newcounter{sargacount}
 \setmainfont[Script=Devanagari]{Sanskrit 2003}
 \newfontscript{Devanagari}{deva,dev2}
 
@@ -24,7 +26,7 @@
 
 %%% SECTIONS and CHAPTERS %%%
 \makeatletter
-\renewcommand\section{\resetShloka\@startsection {section}{1}{\z@}%
+\renewcommand\section{\refstepcounter{sargacount}\resetShloka\@startsection {section}{1}{\z@}%
 %{2.3ex \@plus.2ex}%
 %{-3.5ex \@plus -1ex \@minus -.2ex}%
 %{2.3ex \@plus.2ex}%
@@ -32,7 +34,7 @@
 {2pt}
 {\normalfont\LARGE\bfseries}}
 
-\renewcommand\chapter{\resetShloka\@startsection {chapter}{1}{\z@}%
+\renewcommand\chapter{\setcounter{sargacount}{0}\setcounter{kandashlokas}{0}\resetShloka\@startsection {chapter}{1}{\z@}%
 {10pt}
 {2pt}
 {\normalfont\LARGE\bfseries}}
@@ -69,3 +71,23 @@ urlcolor=black					% colour of external links
 \vbadness=10000
 \hfuzz=6pt
 %\listfiles
+
+\newcommand{\itibala}[2]{\addtocounter{totalshlokas}{\value{shlokacount}}\addtocounter{kandashlokas}{\value{shlokacount}}
+{\normalsize आदितः श्लोकाः — \devanumber{\value{totalshlokas}}}
+
+॥इति श्रीमदध्यात्मरामायणे उमामहेश्वरसंवादे #1~#2~सर्गः॥\devanumber{\value{sargacount}}॥
+
+\closesub
+}
+\newcommand{\iti}[2]{\addtocounter{totalshlokas}{\value{shlokacount}}\addtocounter{kandashlokas}{\value{shlokacount}}
+{\normalsize आदितः श्लोकाः — \devanumber{\value{totalshlokas}}\hfill #1 आदितः श्लोकाः —\devanumber{\value{kandashlokas}}}
+
+॥इति श्रीमदध्यात्मरामायणे उमामहेश्वरसंवादे #1~#2~सर्गः॥\devanumber{\value{sargacount}}॥
+
+\closesub
+}
+\newcommand{\itikanda}[1]{
+#1
+
+\closesection
+}
